@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+<h1>Профиль {{ user.username }}</h1>
+<p>Рейтинг: {{ user.rating }}</p>
+<h2>Мои карточки</h2>
+<ul>
+    {% for card in user.searchcard_set.all %}
+        <li><a href="{% url 'card_detail' card.id %}">{{ card.name_animal }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

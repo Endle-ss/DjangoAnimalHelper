@@ -1,0 +1,184 @@
+/* Сброс отступов и установка базового шрифта */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Заголовки */
+h1, h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Навигация */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* Общие стили для кнопок (Войти, Регистрация, Выйти) */
+button, .btn, .navbar .auth, .navbar .btn, .navbar .logout-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Зеленый цвет для кнопок */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px; /* Отступы между кнопками */
+}
+
+button:hover, .btn:hover, .navbar .auth:hover, .navbar .btn:hover, .navbar .logout-btn:hover {
+    background-color: #45a049; /* Темный зеленый при наведении */
+}
+
+.navbar .auth {
+    background-color: #4CAF50;
+}
+
+.navbar .auth:hover {
+    background-color: #45a049;
+}
+
+.navbar .btn {
+    background-color: #f44336; /* Красный цвет для кнопки выхода */
+}
+
+.navbar .btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Для кнопки "Выйти" (выставляем одинаковый стиль с другими кнопками) */
+.navbar .logout-btn {
+    background-color: #f44336; /* Красный цвет для кнопки выхода */
+    color: white;
+}
+
+/* Формы */
+form {
+    display: inline-block; /* Форма не растягивается на весь экран */
+    margin: 0 10px;  /* Добавляем небольшой отступ между кнопками */
+}
+
+/* Стили для кнопок в форме */
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Ошибки */
+.errors {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.errors ul {
+    list-style: none;
+}
+
+.errors li {
+    margin-bottom: 5px;
+}
+
+/* Список карточек */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Футер */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Профиль */
+.profile-info {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.profile-info ul {
+    padding: 0;
+}
+
+.profile-info ul li {
+    margin: 5px 0;
+}
+
+.profile-info ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.profile-info ul li a:hover {
+    color: #45a049;
+}
+
+/* Ссылки */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #45a049;
+}

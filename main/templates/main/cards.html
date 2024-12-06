@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Карточки{% endblock %}
+
+{% block content %}
+<h1>Карточки животных</h1>
+
+<!-- Форма для поиска -->
+<form method="GET" action="{% url 'search_cards' %}">
+    <input type="text" name="q" placeholder="Искать по имени..." value="{{ request.GET.q }}">
+    <select name="status">
+        <option value="">Все</option>
+        <option value="lost" {% if request.GET.status == "lost" %}selected{% endif %}>Потеряно</option>
+        <option value="found" {% if request.GET.status == "found" %}selected{% endif %}>Найдено</option>
+    </select>
+    <button type="submit">Искать</button>
+</form>
+
+<!-- Вывод списка карточек -->
+<ul>
+    {% for card in cards %}
+        <li>
+            <a href="{% url 'card_detail' card.id %}">
+                {{ card.name_animal }} ({{ card.animal_type }}) - Статус: {{ card.status }}
+            </a>
+        </li>
+    {% empty %}
+        <li>Карточки не найдены.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
