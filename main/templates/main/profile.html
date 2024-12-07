@@ -3,12 +3,24 @@
 {% block title %}Профиль пользователя{% endblock %}
 
 {% block content %}
-<h1>Профиль {{ user.username }}</h1>
-<p>Рейтинг: {{ user.rating }}</p>
+<h1>Профиль: {{ custom_user.user.username }}</h1>
+<p><strong>Email:</strong> {{ custom_user.email }}</p>
+<p><strong>Роль:</strong> {{ custom_user.role }}</p>
+<p><strong>Номер телефона:</strong> {{ custom_user.phone_number }}</p>
+<p><strong>Рейтинг:</strong> {{ custom_user.rating }}</p>
+<p><strong>Дата создания профиля:</strong> {{ custom_user.created|date:"d.m.Y H:i" }}</p>
+<p><strong>Последнее обновление:</strong> {{ custom_user.updated_at|date:"d.m.Y H:i" }}</p>
+
 <h2>Мои карточки</h2>
 <ul>
-    {% for card in user.searchcard_set.all %}
-        <li><a href="{% url 'card_detail' card.id %}">{{ card.name_animal }}</a></li>
+    {% for card in search_cards %}
+        <li>
+            <a href="{% url 'card_detail' card.id %}">
+                {{ card.name_animal }} - {{ card.status }} ({{ card.animal_type }})
+            </a>
+        </li>
+    {% empty %}
+        <li>У вас нет созданных карточек.</li>
     {% endfor %}
 </ul>
 {% endblock %}

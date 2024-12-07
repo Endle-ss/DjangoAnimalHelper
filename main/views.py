@@ -8,6 +8,8 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .models import SearchCard
+from django.shortcuts import render, get_object_or_404
+from .models import CustomUser, SearchCard
 
 def index(request):
     return render(request, 'main/index.html')
@@ -94,9 +96,16 @@ def user_login(request):
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
+
 def profile_view(request):
-    user = request.user  # Получаем текущего аутентифицированного пользователя
-    return render(request, 'main/profile.html', {'user': user})
+    custom_user = get_object_or_404(CustomUser, user=request.user)
+    search_cards = SearchCard.objects.filter(user=custom_user)
+
+    return render(request, 'main/profile.html', {
+        'custom_user': custom_user,
+        'search_cards': search_cards
+    })
+
 
 def register_view(request):
     if request.method == 'POST':
