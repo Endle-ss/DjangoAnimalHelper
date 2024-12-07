@@ -120,3 +120,4 @@ def search_cards(request):
 def card_detail(request, card_id):
     card = get_object_or_404(SearchCard, id=card_id)
     return render(request, 'main/card_detail.html', {'card': card})
+

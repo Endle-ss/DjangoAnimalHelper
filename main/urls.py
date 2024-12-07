@@ -8,7 +8,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('profile/', views.profile_view, name='profile'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('cards/', views.cards, name='cards'),  # Маршрут для /cards
+    path('cards/', views.cards, name='cards'), 
     path('search/', views.search_cards, name='search_cards'),
     path('card/<int:card_id>/', views.card_detail, name='card_detail'),
 ]

@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Детали карточки{% endblock %}
+
+{% block content %}
+<h1>Детали карточки</h1>
+<p><strong>Имя животного:</strong> {{ card.name_animal }}</p>
+<p><strong>Тип животного:</strong> {{ card.animal_type }}</p>
+<p><strong>Статус:</strong> {{ card.status }}</p>
+<p><strong>Описание:</strong> {{ card.describe_animal }}</p>
+<p><strong>Последнее местоположение:</strong> {{ card.last_seen_location }}</p>
+<p><strong>Дата обновления:</strong> {{ card.updated_at }}</p>
+
+<a href="{% url 'cards' %}" class="btn">Назад к карточкам</a>
+{% endblock %}
